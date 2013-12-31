@@ -1,0 +1,59 @@
+<div class="jumbotron">
+  <h1>Hearthstats</h1>
+  <p>Hearthstats is a tool to keep track of your Hearthstone games as well as provide statistics.</p>
+</div>
+<div class="well">
+  <%= form_for :match, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+  <legend>Statistics</legend>
+  <div class="form-group clearfix">
+    <%= f.label 'Game Type:', nil, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <div class="radio">
+      <%= f.radio_button :match_type, "arena", :checked => true %>
+      <%= f.label 'Arena' %>
+      </div>
+      <div class="radio">
+      <%= f.radio_button :match_type, "ranked" %>
+      <%= f.label 'Ranked' %>
+      </div>
+      <div class="radio">
+      <%= f.radio_button :match_type, "casual" %>
+      <%= f.label 'Casual' %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="select" class="col-lg-2 control-label">Your Hero:</label>
+    <div class="col-lg-10">
+      <%= select_tag 'your_hero', options_for_select(@classes.each{ |u| u }), :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="select" class="col-lg-2 control-label">Their Hero:</label>
+    <div class="col-lg-10">
+      <%= select_tag 'their_hero', options_for_select(@classes.each{ |u| u }), :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <%= f.label 'Outcome:', nil, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <div class="radio">
+      <%= f.radio_button :outcome, "win", :checked => true %>
+      <%= f.label 'Win' %>
+      </div>
+      <div class="radio">
+      <%= f.radio_button :outcome, "loss" %>
+      <%= f.label 'Loss' %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-lg-10 col-lg-offset-2">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+</fieldset>
+<% end %>
+</div>
+<div class="well">&copy;2014 <a href="http://www.bryanmytko.com">Bryan Mytko</a></div>

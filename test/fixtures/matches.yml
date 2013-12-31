@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_type: MyString
+  your_hero: MyString
+  their_hero: MyString
+  outcome: 1
+
+two:
+  game_type: MyString
+  your_hero: MyString
+  their_hero: MyString
+  outcome: 1
